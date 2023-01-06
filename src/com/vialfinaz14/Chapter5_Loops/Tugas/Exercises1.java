@@ -14,7 +14,7 @@ public class Exercises1 {
         System.out.println("Enter an integer, the input ends if it is 0: ");
         int number = input.nextInt();
         if (number == 0) {
-            System.out.println("No number are entered except 0");
+            System.out.println("No numbers are entered except 0");
             System.exit(1);
         }
         while (number != 0) {
