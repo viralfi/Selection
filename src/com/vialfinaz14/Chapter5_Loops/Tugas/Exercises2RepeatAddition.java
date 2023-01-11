@@ -1,9 +1,8 @@
 package com.vialfinaz14.Chapter5_Loops.Tugas;
 
 import java.util.Scanner;
-import java.util.stream.StreamSupport;
 
-public class Exercises2 {
+public class Exercises2RepeatAddition {
     public static void main(String[] args) {
         final  int NumberOfQuestions = 10;
         int correctCount = 0;

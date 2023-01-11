@@ -1,6 +1,6 @@
 package com.vialfinaz14.Chapter5_Loops.Tugas;
 
-public class Exercises6 {
+public class Exercises6MileToKilogram {
     public static void main(String[] args) {
         final double KilometrsPerMile = 1.609;
 

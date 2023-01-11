@@ -1,9 +1,8 @@
 package com.vialfinaz14.Chapter5_Loops.Tugas;
 
-import java.util.Enumeration;
 import java.util.Scanner;
 
-public class Exercises9 {
+public class Exercises9FindTheTwoHighestScores {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
 

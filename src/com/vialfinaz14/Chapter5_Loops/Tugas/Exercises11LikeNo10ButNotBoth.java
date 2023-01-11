@@ -1,8 +1,6 @@
 package com.vialfinaz14.Chapter5_Loops.Tugas;
 
-import javax.swing.plaf.synth.SynthLookAndFeel;
-
-public class Exercises11 {
+public class Exercises11LikeNo10ButNotBoth {
     public static void main(String[] args) {
         final int NumberPerLine = 10;
         int count = 0;

@@ -2,7 +2,7 @@ package com.vialfinaz14.Chapter5_Loops.Tugas;
 
 import java.util.Scanner;
 
-public class Exercises16 {
+public class Exercises16FindTheFactorsOfAnInteger {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
 

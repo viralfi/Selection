@@ -1,6 +1,6 @@
 package com.vialfinaz14.Chapter5_Loops.Tugas;
 
-public class Exercises19 {
+public class Exercises19DisplayNumbersInaPyramidPatterN {
     public static void main(String[] args) {
         int startRight = 0, endSpace = 7;
 

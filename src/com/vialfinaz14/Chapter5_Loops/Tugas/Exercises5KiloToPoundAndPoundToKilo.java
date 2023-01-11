@@ -1,6 +1,6 @@
 package com.vialfinaz14.Chapter5_Loops.Tugas;
 
-public class Exercises5 {
+public class Exercises5KiloToPoundAndPoundToKilo {
     public static void main(String[] args) {
         final double PoundsPerKilogram = 2.2;
 

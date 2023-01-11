@@ -1,6 +1,6 @@
 package com.vialfinaz14.Chapter5_Loops.Tugas;
 
-public class Exercises12 {
+public class Exercises12FindTheSmallestnSuch {
     public static void main(String[] args) {
         int n = 0;
         while (Math.pow(n, 2) <= 12000) {

@@ -1,6 +1,6 @@
 package com.vialfinaz14.Chapter5_Loops.Tugas;
 
-public class Exercises23 {
+public class Exercises23DemonstrateCancellationErrors {
     public static void main(String[] args) {
         double sumLTR = 0.0;
         for (double i = 1.0; i <= 50000.0; i++) {

@@ -2,7 +2,7 @@ package com.vialfinaz14.Chapter5_Loops.Tugas;
 
 import java.util.Scanner;
 
-public class Exercises17 {
+public class Exercises17DisplayPyramid {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
 

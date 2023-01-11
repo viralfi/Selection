@@ -1,8 +1,6 @@
 package com.vialfinaz14.Chapter5_Loops.Tugas;
 
-import java.util.Scanner;
-
-public class Exercises4 {
+public class Exercises4MilesToKilograms {
     public static void main(String[] args) {
         final  double KilometerPerMili =1.609;
 

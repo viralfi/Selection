@@ -1,6 +1,6 @@
 package com.vialfinaz14.Chapter5_Loops.Tugas;
 
-public class Exercises20 {
+public class Exercises20DisplayPrimeNumbersBetween2and1000 {
     public static void main(String[] args) {
         final int NOPPL = 8;
         int count = 0;

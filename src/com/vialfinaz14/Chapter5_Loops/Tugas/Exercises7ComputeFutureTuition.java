@@ -1,6 +1,6 @@
 package com.vialfinaz14.Chapter5_Loops.Tugas;
 
-public class Exercises7 {
+public class Exercises7ComputeFutureTuition {
     public static void main(String[] args) {
         int totalCost = 0;
         int tuition = 10000;

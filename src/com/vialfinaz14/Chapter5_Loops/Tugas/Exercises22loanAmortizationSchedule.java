@@ -1,9 +1,8 @@
 package com.vialfinaz14.Chapter5_Loops.Tugas;
 
-import javax.imageio.stream.ImageOutputStream;
 import java.util.Scanner;
 
-public class Exercises22 {
+public class Exercises22loanAmortizationSchedule {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
 

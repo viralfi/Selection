@@ -1,6 +1,6 @@
 package com.vialfinaz14.Chapter5_Loops.Tugas;
 
-public class Exercises15 {
+public class Exercises15DisplayTheASCIICharacterTable {
     public static void main(String[] args) {
         final int NumberOfCharactersPerLine = 10;
         int count = 0;

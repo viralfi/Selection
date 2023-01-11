@@ -2,7 +2,7 @@ package com.vialfinaz14.Chapter5_Loops.Tugas;
 
 import java.util.Scanner;
 
-public class Exercises8 {
+public class Exercises8FindTheHighestScore {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
 
