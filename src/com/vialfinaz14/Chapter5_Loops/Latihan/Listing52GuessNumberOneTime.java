@@ -2,7 +2,7 @@ package com.vialfinaz14.Chapter5.Latihan;
 
 import java.util.Scanner;
 
-public class Listing52 {
+public class Listing52GuessNumberOneTime {
     public static void main(String[] args) {
         int number = (int)(Math.random() * 10);
 

@@ -2,7 +2,7 @@ package com.vialfinaz14.Chapter5.Latihan;
 
 import java.util.Scanner;
 
-public class Listing51 {
+public class Listing51RepeatAdditionQuiz {
     public static void main(String[] args) {
         int number1 = (int)(Math.random() * 10);
         int number2 = (int)(Math.random() * 10);
