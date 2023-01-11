@@ -2,7 +2,7 @@ package com.vialfinaz14.Chapter4.Tugas;
 
 import java.util.Scanner;
 
-public class tugas12 {
+public class tugas12HexToBinary {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
 

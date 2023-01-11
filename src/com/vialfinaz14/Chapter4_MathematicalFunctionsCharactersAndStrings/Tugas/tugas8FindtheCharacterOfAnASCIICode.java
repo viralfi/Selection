@@ -1,10 +1,8 @@
 package com.vialfinaz14.Chapter4.Tugas;
 
-import javax.print.DocFlavor;
 import java.util.Scanner;
-import java.util.stream.StreamSupport;
 
-public class tugas8 {
+public class tugas8FindtheCharacterOfAnASCIICode {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
 

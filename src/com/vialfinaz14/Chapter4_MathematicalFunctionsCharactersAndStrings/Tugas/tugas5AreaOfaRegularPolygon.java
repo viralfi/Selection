@@ -2,7 +2,7 @@ package com.vialfinaz14.Chapter4.Tugas;
 
 import java.util.Scanner;
 
-public class tugas5 {
+public class tugas5AreaOfaRegularPolygon {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
 

@@ -1,9 +1,8 @@
 package com.vialfinaz14.Chapter4.Tugas;
 
 import java.util.Scanner;
-import java.util.stream.StreamSupport;
 
-public class tugas2 {
+public class tugas2greatCircleDistance {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         final double RADIUS = 6371.01;

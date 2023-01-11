@@ -1,9 +1,8 @@
 package com.vialfinaz14.Chapter4.Tugas;
 
 import java.util.Scanner;
-import java.util.stream.StreamSupport;
 
-public class tugas9 {
+public class tugas9FindtheUnicodeOfaCharacter {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
 

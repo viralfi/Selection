@@ -1,9 +1,8 @@
 package com.vialfinaz14.Chapter4.Tugas;
 
-import javax.security.auth.callback.LanguageCallback;
 import java.util.Scanner;
 
-public class tugas6 {
+public class tugas6RandomPointsOnaCircle {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         final double RADIUS = 40;
