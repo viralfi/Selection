@@ -2,7 +2,7 @@ package com.vialfinaz14.Chapter4.Latihan;
 
 import java.util.Scanner;
 
-public class Latihan1 {
+public class Listing1 {
 
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);

@@ -1,9 +1,8 @@
 package com.vialfinaz14.Chapter4.Latihan;
 
 import java.util.Scanner;
-import java.util.stream.StreamSupport;
 
-public class latihan3 {
+public class Listing3 {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
 
