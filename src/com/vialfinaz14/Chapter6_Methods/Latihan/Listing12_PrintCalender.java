@@ -19,8 +19,8 @@ public class Listing12_PrintCalender {
     public static void printMonthTitle(int year, int month) {
         System.out.println("           " + getMonthName(month) +
                 " " + year);
-        System.out.println("_____________________________" );
-        System.out.println(" Sun Mon Tue Wed Thu Fri Sat ");
+        System.out.println("___________________________________" );
+        System.out.println(" Sun  Mon  Tue  Wed  Thu  Fri  Sat ");
     }
     public static String getMonthName(int month) {
         String monthName = "";
@@ -69,7 +69,7 @@ public class Listing12_PrintCalender {
         for (i = 0; i <= startDay; i++)
             System.out.print("   ");
         for (i = 1; i < numberOfDaysInMonth; i++) {
-            System.out.printf("%4d", i);
+            System.out.printf("%5d", i);
         if ((i + startDay) % 7 == 0)
             System.out.println();
     }
