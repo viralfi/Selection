@@ -1,9 +1,14 @@
 package com.vialfinaz14.Chapter6_Methods.Latihan;
 
+import javax.script.ScriptContext;
+import java.util.Scanner;
+
 public class Listing2_TestVoidMethod {
     public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
         System.out.print("Nilainya adalah ");
-        printGrade(78.5);
+        double score = input.nextDouble();
+        printGrade(score);
         System.out.print("Nilainya adalah ");
         printGrade(59.5);
     }

@@ -7,20 +7,18 @@ public class Exercises15_PrintaTaxTable {
         double interval = 50;
 
         System.out.println("\n Taxeble    single  Married joint   married    " +
-                "Head of\n" + " Income       or Qualifying   separate    a house\n" +
+                "Head of\n" + " Income             or Qualifying   separate    a house\n" +
                 "                       widow(er)\n" +
                 "----------------------------------------------------------------");
         for (double taxableIncome = from;
              taxableIncome <= to; taxableIncome += interval) {
             System.out.printf("%-13.0f", taxableIncome);
             System.out.printf("%-12d", Math.round(computeTax(0, taxableIncome)));
-            System.out.printf("%-20d", Math.round(computeTax(1, taxableIncome)));
-            System.out.printf("%-15d", Math.round(computeTax(2, taxableIncome)));
+            System.out.printf("%-12d", Math.round(computeTax(1, taxableIncome)));
+            System.out.printf("%-13d", Math.round(computeTax(2, taxableIncome)));
             System.out.printf("%-10d\n", Math.round(computeTax(3, taxableIncome)));
         }
     }
-
-
     public static double computeTax(int status, double taxableIncome) {
         double tax, taxRate, incomeTaxed, incomeUntaxed, taxAt15Pecent,
                 taxAt25Pecent, taxAt28Pecent, taxAt33Pecent, taxAt35Pecent;
@@ -83,7 +81,6 @@ public class Exercises15_PrintaTaxTable {
             tax += (incomeTaxed = taxableIncome - incomeUntaxed) * taxRate;
             taxableIncome -= incomeTaxed;
         }
-
         return tax += taxableIncome * 0.10;
     }
 }
