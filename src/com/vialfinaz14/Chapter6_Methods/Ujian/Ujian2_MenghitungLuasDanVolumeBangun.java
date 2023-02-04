@@ -8,37 +8,45 @@ public class Ujian2_MenghitungLuasDanVolumeBangun {
         Scanner input =new Scanner(System.in);
 
         System.out.println("BANGUN RUANG");
+        System.out.println("1. Prisma segitiga");
+        System.out.println("2. Kubus");
+        System.out.println("3. Balok");
+        System.out.println("4. Tabung");
+        System.out.println("5. Kerucut");
         int BR = input.nextInt();
 
         switch (BR) {
             case 1:
-                System.out.println("1.Prisma Segitiga");
+                System.out.println("Menghitung volume dan luas permukaan Prisma Segitiga");
                 System.out.print("alas ");
                 double alas = input.nextDouble();
                 System.out.print("Tinggi segitiga ");
                 double ts = input.nextDouble();
                 System.out.print("Tinggi prisma ");
                 double tp = input.nextDouble();
-            prismasegitiga(alas, ts, tp);break;
+                prismasegitiga(alas, ts, tp);
+                break;
 
             case 2:
-                System.out.println("2.Kubus");
+                System.out.println("Menghitung volume dan luas permukaan Kubus");
                 System.out.print("sisi kubus ");
                 double sk = input.nextDouble();
-                kubus(sk);break;
+                kubus(sk);
+                break;
 
             case 3:
-                System.out.println("3.Balok");
+                System.out.println("Menghitung volume dan luas permukaan Balok");
                 System.out.print("Tinggi ");
                 double t = input.nextDouble();
                 System.out.print("Panjang ");
                 double p = input.nextDouble();
                 System.out.print("Lebar ");
                 double l = input.nextDouble();
-            Balok(t, p, l);break;
+                Balok(t, p, l);
+                break;
 
             case 4:
-                System.out.println("Tabung");
+                System.out.println("Menghitung volume dan luas permukaan Tabung");
                 final double pi = 3.1415;
                 System.out.print("Jari- jari ");
                 int j = input.nextInt();
@@ -48,10 +56,11 @@ public class Ujian2_MenghitungLuasDanVolumeBangun {
                 double d1 = 2 * j;
                 System.out.print("Tinggi ");
                 double t1 = input.nextDouble();
-                tabung(r, t1, pi);break;
+                tabung(r, t1, pi);
+                break;
 
             case 5:
-                System.out.println("Kerucut");
+                System.out.println("Menghitung volume dan luas permukaan Kerucut");
                 final double PI = 3.1415;
                 System.out.print("Jari- jari ");
                 double jr = input.nextDouble();
@@ -60,6 +69,7 @@ public class Ujian2_MenghitungLuasDanVolumeBangun {
                 System.out.println("Sisi ");
                 double s = input.nextDouble();
                 kerucut(PI, jr, ti, s);
+                break;
         }
     }
     public static void prismasegitiga(double alas,

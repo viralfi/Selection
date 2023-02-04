@@ -4,17 +4,26 @@ import javax.swing.*;
 
 public class Ujian1_InchToMetersAndMetersToInch {
     public static void main(String[] args) {
-        System.out.println("\nInch    Meter     |     meter       Inch");
+        System.out.println("\nInch       Meter      |     meter       Inch");
         System.out.println("---------------------------------------------");
 
         for (double inch = 1.0, meter = 1.0; inch <= 100.0;
-             inch++, meter ++) {
-            System.out.printf("%4.1f  ", inch);
-            System.out.printf("%6.4f", kemeter(inch));
-            System.out.print("      |      ");
-            System.out.printf("%-11.1f", meter);
-            System.out.printf("%7.4f\n", keinch(meter));
+             inch++, meter++) {
+            if (inch >= 1 && inch < 100) {
+                System.out.printf("%4.1f  ", inch);
+                System.out.printf("%10.4f", kemeter(inch));
+                System.out.print("      |      ");
+                System.out.printf("%-10.1f", meter);
+                System.out.printf("%7.4f\n", keinch(meter));
+            } else if (inch >= 100) {
+                System.out.printf("%4.1f  ", inch);
+                System.out.printf("%9.4f", kemeter(inch));
+                System.out.print("      |      ");
+                System.out.printf("%-10.1f", meter);
+                System.out.printf("%7.4f\n", keinch(meter));
+            }
         }
+
     }
     public static double kemeter(double inci) {
         return 0.0254 * inci;

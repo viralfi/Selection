@@ -1,238 +1,333 @@
 package com.vialfinaz14.Chapter6_Methods.Ujian;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.nio.file.LinkPermission;
 import java.util.Scanner;
 
 public class Ujian3_MenkonversiJenisBilangan {
+    static Scanner input = new Scanner(System.in);
+
     public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
-        System.out.print("Masukan menu: ");
-        int menu = input.nextInt();
+        String in = null, out = null, finalresult = null, number = null;
 
+        int menu = pilihMenu();
         switch (menu) {
-            case 1 :
-                System.out.println("\n1. Mengkonversi Biner ke Oktal");
-                System.out.println("Masukan Nilai Biner: ");
-                long bine = input.nextLong();
-                int a = 0, no = 0, nd = 0;
-                binkeokt(bine, a, no, nd);break;
-            case 2 :
-                System.out.println("\n2. Mengkonversi Biner ke desimal");
-                System.out.println("Masukan Nilai Biner: ");
-                long bin = input.nextLong();
-                long j = 1, d = 0;
-                binkedes(bin, j, d);break;
-            case 3 :
-                System.out.println("\n3. Mengkonversi Biner ke Heksa");
-                int hed = 0, m2 = 1, c = 1, em = 0, ai = 0;
-                System.out.println("Masukan Nilai Biner: ");
-                long biner = input.nextLong();
-                binkehek(biner, hed, m2, c, em, ai);break;
-            case 4 :
-                System.out.println("\n4. Mengkonversi Oktal ke Biner");
-                System.out.println("Masukan nilai Oktal: ");
-                int ok = input.nextInt();
-                int e = 0, dv = 0, bv = 0;
-                oktkebin(ok, e, dv, bv);break;
-            case 5 :
-                System.out.println("\n5. Mengkonversi Oktal ke Desimal");
-                System.out.println("Masukan nilai Oktal: ");
-                int okt = input.nextInt();
-                int da = 0, t = 1, dig = 0;
-                oktkedes(okt, da, t, dig);break;
-            case 6 :
-                System.out.println("\n6. Mengkonversi Oktal ke Heksa");
-                int desim = 0, i2 = 0, re = 0;
-                System.out.println("Masukan nilai Oktal: ");
-                int okta = input.nextInt();
-                oktkeheks(desim, i2, re, okta);break;
-            case 7 :
-                System.out.println("\n7. Mengkonversi Desimal ke Biner");
-                System.out.print("Masukan Nilai Desimal: ");
-                int des = input.nextInt();
-                deskebin(des);break;
-            case 8 :
-                System.out.println("\n8. Mengkonversi bilangan Desimal ke oktal");
-                System.out.print("Masukan Nilai desimal: ");
-                int des1 = input.nextInt();
-                deskeokt(des1);break;
-            case 9 :
-                System.out.println("\n9. Mengkonversi bilangan Desimal ke heksa");
-                System.out.print("Masukan nilai Desimal: ");
-                int des2 = input.nextInt();
-                deskehex(des2);break;
-            case 10 :
-                System.out.println("\n10. Mengkonversi Heksa ke Biner");
-                System.out.println("Masukan nilai Heksa: ");
-                String hek = input.next();
-            case 11 :
-                System.out.println("\n11. Mengkonversi Heksa ke Oktal");
-                int dec = 0, r = 0, u = 0;
-                System.out.println("Masukan nilai Heksa: ");
-                String heks = input.next();
-                hekskeokt(dec, r, u, heks);
-            case 12 :
-                System.out.println("\n12. Mengkonversi Heksa ke Desimal");
-                System.out.println("Masukan nilai Heksa: ");
-                String heksa = input.nextLine();
-        }
-    }
-    public static void binkeokt(long bine, int no, int nd, int a) {
-        System.out.print("Nilai oktal dari biner " + bine);
-        for (a = 1; bine != 0; bine = bine / 10, a = a * 2) {
-            nd = (int) (nd + (bine % 10) * a);
-        }
-        for (a = 1; nd != 0; a = a * 10) {
-            no = no + (nd % 8) * a;
-            nd = nd / 8;
-        }
-        System.out.println(" adalah " + no);
-    }
-    public static void binkedes(long bin, long j, long d) {
-        System.out.print("Nilai Desimal dari biner " + bin );
-        while (bin != 0) {
-            long r = bin % 10;
-            d = d + r * j;
-            j = j * 2;
-            bin = bin / 10;
-        }
-        System.out.println(" adalah " + d);
-    }
-    public static void binkehek(long biner, int hed, int m2,
-                                int c, int em, int ai) {
-        char [] hn = new char[20];
-        System.out.print("Nilai Heksa dari Biner " + biner);
-        while (biner != 0) {
-            em = (int) (biner % 10);
-            hed = hed + (em * m2);
-            if (c % 4 == 0 ) {
-                if (hed < 10)
-                    hn[ai] = (char) (hed + 48);
-                else
-                    hn[ai] = (char) (hed + 55);
-                m2 = 1;
-                c = 1;
-                hed = 0;
-                ai++;
-            }else {
-                m2 = m2 * 2;
-                c++;
+            case 1 -> {
+                in = "binary";
+                out = "oktal";
+                number = inputnumber(in, out);
+                boolean result = checkinput(number, in);
+                finalresult = convertnumber(result, number, in, out);
             }
-            biner = biner / 10;
-        }
-        if(c != 1)
-            hn[ai] = (char)(hed + 48);
-        if(c == 1)
-            ai--;
-        System.out.print(" adalah " );
-        for(ai = 1; ai >= 0; ai--)
-            System.out.print(hn[ai]);
-    }
-    public static void oktkebin(int ok, int e, int dv, int bv) {
-        if (ok >= 8 & ok <= 9)
-            System.out.println("Error");
-        else
-            System.out.print("Nilai Biner dari Oktal " + ok);
-        while (ok != 0) {
-            dv += (ok % 10) * Math.pow(8, e);
-            e++;
-            ok /= 10;
-        }
-        e = 1;
-        while (dv != 0) {
-            bv += (dv % 2) * e;
-            dv /= 2;
-            e *= 10;
-        }
-        System.out.println(" aadalah " + bv);
-    }
-    public static void oktkedes(int okt, int da, int t, int dig) {
-        System.out.print("Nilai Desimal dari Oktal " + okt);
-        while (okt != 0) {
-            dig = okt % 10;
-            da = da + (dig * t);
-            t = t * 8;
-            okt = okt / 10;
-        }
-        System.out.println(" adalah " + da);
-    }
-    public static void deskebin(int des) {
-        StringBuilder biner = new StringBuilder();
-        for (int i = des; i > 0; i /= 2 ) {
-            biner.insert(0, (i % 2));
-        }
-        System.out.println("Nilai biner dari Desimal " + des +
-                " adalah " + biner);
-    }
-    public static void deskeokt(int des1) {
-        String okt = "";
-        for (int i = des1; i > 0; i/= 8) {
-            okt = (i % 8) + okt;
-        }
-        System.out.println("Nilai oktal dari desimal " + des1 +
-                " adalah " + okt);
-    }
-    public static void deskehex(int des2) {
-        StringBuilder hek = new StringBuilder();
-        System.out.print("Nilai heksa dari desimal " + des2);
-        while (des2 != 0) {
-            int v = des2 % 16;
-            char ch = (v >= 0 && v <= 9) ?
-                    (char) (v + '0') : (char) (v - 10 + 'A');
-            hek.insert(0,ch);
-            des2 = des2 / 16;
-        }
-        System.out.println(" adalah " + hek);
-    }
-    public static void oktkeheks(int desim, int i2, int re, int okta) {
-        char[] hexa = new char[20];
-        System.out.print("Nilai Heksa dari Oktal " + okta);
-        while (okta != 0) {
-            re = okta % 10;
-            desim = (int) (desim + (re * Math.pow(8, i2)));
-            i2++;
-            okta = okta / 10;
-        }
-        while (desim != 0) {
-            re = desim % 16;
-            if (re < 10)
-                re = re + 48;
-            else
-                re = re + 55;
-            hexa [i2] = (char) re;
-            i2++;
-            desim = desim / 16;
-        }
-        System.out.print(" adalah ");
-        for(i2 = (i2 - 1); i2 >= 0; i2--)
-            System.out.print(hexa[i2]);
-    }
-    public static void hekskeokt(int dec, int r, int u, String heks) {
-        int[] oktal = new int[20];
-        int len = heks.length();
-        for (len = (len - 1); len >= 0; len--) {
-            r = heks.charAt(len);
-            if (r >= '0' && r <= '9')
-                r = r - 48;
-            else if (r >= 'A' && r <= 'F')
-                r = r - 55;
-            else if (r >= 'a' && r <= 'f')
-                r = r - 87;
-            else {
-                System.out.println("\nnomor ini tidak valid!");
-                return;
+            case 2 -> {
+                in = "binary";
+                out = "decimal";
+                number = inputnumber(in, out);
+                boolean result = checkinput(number, in);
+                finalresult = convertnumber(result, number, in, out);
             }
-            int m = 1;
-            for (int k = 1; k <= u; k++)
-                m *= 16;
-            dec = (dec + (r * m));
-            u++;
+            case 3 -> {
+                in = "binary";
+                out = "hexdecimal";
+                number = inputnumber(in, out);
+                boolean result = checkinput(number, in);
+                finalresult = convertnumber(result, number, in, out);
+            }
+            case 4 -> {
+                in = "octal";
+                out = "binary";
+                number = inputnumber(in, out);
+                boolean result = checkinput(number, in);
+                finalresult = convertnumber(result, number, in, out);
+            }
+            case 5 -> {
+                in = "octal";
+                out = "decimal";
+                number = inputnumber(in, out);
+                boolean result = checkinput(number, in);
+                finalresult = convertnumber(result, number, in, out);
+            }
+            case 6 -> {
+                in = "octal";
+                out = "hexdecimal";
+                number = inputnumber(in, out);
+                boolean result = checkinput(number, in);
+                finalresult = convertnumber(result, number, in, out);
+            }
+            case 7 -> {
+                in = "decimal";
+                out = "binary";
+                number = inputnumber(in, out);
+                boolean result = checkinput(number, in);
+                finalresult = convertnumber(result, number, in, out);
+            }
+            case 8 -> {
+                in = "decimal";
+                out = "octal";
+                number = inputnumber(in, out);
+                boolean result = checkinput(number, in);
+                finalresult = convertnumber(result, number, in, out);
+            }
+            case 9 -> {
+                in = "decimal";
+                out = "hexdecimal";
+                number = inputnumber(in, out);
+                boolean result = checkinput(number, in);
+                finalresult = convertnumber(result, number, in, out);
+            }
+            case 10 -> {
+                in = "hexdecimal";
+                out = "binary";
+                number = inputnumber(in, out);
+                boolean result = checkinput(number, in);
+                finalresult = convertnumber(result, number, in, out);
+            }
+            case 11 -> {
+                in = "hexdecimal";
+                out = "octal";
+                number = inputnumber(in, out);
+                boolean result = checkinput(number, in);
+                finalresult = convertnumber(result, number, in, out);
+            }
+            case 12 -> {
+                in = "hexdecimal";
+                out = "decimal";
+                number = inputnumber(in, out);
+                boolean result = checkinput(number, in);
+                finalresult = convertnumber(result, number, in, out);
+            }
         }
-        for (u = 0; dec != 0; dec /= 8)
-            oktal[u++] = dec % 8;
+        assert finalresult != null;
+        if (finalresult.equals("Error")) {
+            System.out.println("Input yang anda masukan salah");
+        } else {
+            System.out.println(number.toUpperCase() + " in " + in + " is " + finalresult.toUpperCase() + " in " + out);
 
-        System.out.print("\nNilai Oktal dari heksa " + heks + " adalah ");
-        for (u = (u - 1); u >= 0; u--)
-            System.out.print(oktal[u]);
+        }
+    }
+
+    private static int pilihMenu() {
+        System.out.println("=========MENU=========");
+        System.out.println("1. Biner    ke Oktal");
+        System.out.println("2. Biner    ke Desimal");
+        System.out.println("3. Biner    ke Heksa");
+        System.out.println("4. Oktal    ke Biner");
+        System.out.println("5. Oktal    ke Desimal");
+        System.out.println("6. Oktal    ke Heksa");
+        System.out.println("7. Desimal  ke Biner");
+        System.out.println("8. Desimal  ke Oktal");
+        System.out.println("9. Desimal  ke Heksa");
+        System.out.println("10.Heksa    ke Biner");
+        System.out.println("11.Heksa    ke Oktal");
+        System.out.println("12.Heksa    ke Desimal");
+
+        System.out.print("Masukan menu: ");
+        return input.nextInt();
+    }
+
+    public static String inputnumber(String in, String out) {
+        String number;
+        System.out.println(in + " -> " + out);
+        System.out.println("Input " + in + " Number : ");
+        number = input.next();
+        return number;
+    }
+    public static String convertnumber(boolean result, String number, String in, String out) {
+        String finalresult;
+        if (result) {
+            if (in.equals("binary") && out.equals("octal")) {
+                finalresult = binkeoct(number);
+            } else if (in.equals("binary") && out.equals("decimal")) {
+                finalresult = String.valueOf(binkedes(number));
+            } else if (in.equals("binary") && out.equals("hexdecimal")) {
+                finalresult = binkehek(number);
+            } else if (in.equals("octal") && out.equals("binary")) {
+                finalresult = oktkebin(number);
+            } else if (in.equals("octal") && out.equals("decimal")) {
+                finalresult = oktkedes(number);
+            } else if (in.equals("octal") && out.equals("hexdecimal")) {
+                finalresult = oktkeheks(number);
+            } else if (in.equals("decimal") && out.equals("binary")) {
+                finalresult = deskebin(number);
+            } else if (in.equals("decimal") && out.equals("octal")) {
+                finalresult = deskeokt(number);
+            } else if (in.equals("decimal") && out.equals("hexdecimal")) {
+                finalresult = deskehex(number);
+            } else if (in.equals("hexdecimal") && out.equals("binary")) {
+                finalresult = hekskebin(number);
+            } else if (in.equals("hexdecimal") && out.equals("octal")) {
+                finalresult = hekskeokt(number);
+            } else if (in.equals("hexdecimal") && out.equals("decimal")) {
+                finalresult = hekskedes(number);
+            } else {
+                finalresult = " error";
+            }
+        } else {
+            finalresult = "Error";
+        }
+        return finalresult;
+    }
+
+    public static boolean checkinput(String number, String check) {
+        switch (check) {
+            case "binary" -> {
+                return number.matches("[01]+");
+            }
+            case "decimal" -> {
+                return number.matches("-?\\d+(\\.\\d+)?");
+            }
+            case "hexdecimal" -> {
+                return number.matches("^[0-9a-fA-F]+$");
+            }
+            case "octal" -> {
+                return number.matches("^[0-7]+$");
+            }
+            default -> {
+                try {
+                    throw new IllegalAccessException("unexpected value: " + check);
+                } catch (IllegalAccessException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+        }
+    }
+    private static int binkedes(String number) {
+        return Integer.parseInt(String.valueOf(number), 2);
+    }
+
+    private static String binkeoct(String number) {
+        int decimal = Integer.parseInt(String.valueOf(number), 2);
+        return Integer.toOctalString(decimal);
+    }
+
+    private static String binkehek(String number) {
+        int decimal = Integer.parseInt(String.valueOf(number), 2);
+        return Integer.toHexString(decimal);
+    }
+    public static String oktkebin(String number) {
+        StringBuilder binary = new StringBuilder();
+        for (int i = 0; i < number.length(); i++) {
+            int digit = number.charAt(i) - '0';
+            StringBuilder binPart = new StringBuilder();
+            for (int j = 0; j < 3; j++) {
+                binPart.insert(0, (digit & 1));
+                digit = digit >> 1;
+            }
+            binary.append(binPart);
+        }
+        return binary.toString();
+    }
+    public static String oktkedes(String number) {
+        StringBuilder decimal = new StringBuilder();
+        for (int i = 0; i < number.length(); i++) {
+            char c = number.charAt(i);
+            int digit = c - '0';
+            decimal.append(digit * Math.pow(8, number.length() - i - 1));
+        }
+
+        return decimal.toString();
+    }
+    public static String deskebin(String number) {
+        int decimal = Integer.parseInt(number);
+        StringBuilder binary = new StringBuilder();
+        while (decimal > 0) {
+            long rem = decimal % 2;
+            binary.insert(0, rem);
+            decimal = decimal / 2;
+        }
+        return binary.toString();
+    }
+    public static String deskeokt(String number) {
+        int decimal = Integer.parseInt(number);
+        return Integer.toOctalString(decimal);
+    }
+    public static String deskehex(String number) {
+       int decimal = Integer.parseInt(number);
+       return Integer.toHexString(decimal);
+    }
+    public static String oktkeheks(String number) {
+        int decimal = 0;
+        for (int i = 0; i < number.length(); i++) {
+            char c = number.charAt(i);
+            int digit = c - '0';
+            decimal += digit * Math.pow(8, number.length() - i - 1);
+        }
+        StringBuilder hex = new StringBuilder();
+        char[] hexChars = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'};
+        while (decimal > 0) {
+            long remainder = decimal % 16;
+            hex.insert(0, hexChars[(int) remainder]);
+            decimal = decimal / 16;
+        }
+
+        return hex.toString();
+    }
+    public static String hekskeokt(String number) {
+        int decimal = 0;
+        number = number.toUpperCase();
+        for (int i = 0; i < number.length(); i++) {
+            char c = number.charAt(i);
+            int digit;
+            if (c >= '0' && c <= '9') {
+                digit = c - '0';
+            } else if (c >= 'A' && c <= 'F') {
+                digit = c - 'A' + 10;
+            } else {
+                throw new IllegalArgumentException("Invalid hexadecimal digit: " + c);
+            }
+            decimal += digit * Math.pow(16, number.length() - i - 1);
+        }
+        StringBuilder octal = new StringBuilder();
+        while (decimal > 0) {
+            octal.insert(0, (decimal & 7));
+            decimal = decimal >> 3;
+        }
+
+        return octal.toString();
+    }
+    public static String hekskedes(String number) {
+        number = number.toUpperCase();
+        int decimal = 0;
+        for (int i = 0; i < number.length(); i++) {
+            char c = number.charAt(i);
+            int digit;
+            if (c >= '0' && c <= '9') {
+                digit = c - '0';
+            } else if (c >= 'A' && c <= 'F') {
+                digit = c - 'A' + 10;
+            } else {
+                throw new IllegalArgumentException("Invalid hexadecimal digit: " + c);
+            }
+            decimal += digit * Math.pow(16, number.length() - i - 1);
+        }
+
+        return String.valueOf(decimal);
+    }
+    public static String hekskebin( String number) {
+        number = number.toUpperCase();
+        StringBuilder binary = new StringBuilder();
+        for (int i = 0; i < number.length(); i++) {
+           char c = number.charAt(i);
+            switch (c) {
+                case '0' -> binary.append("0000");
+                case '1' -> binary.append("0001");
+                case '2' -> binary.append("0010");
+                case '3' -> binary.append("0011");
+                case '4' -> binary.append("0100");
+                case '5' -> binary.append("0101");
+                case '6' -> binary.append("0110");
+                case '7' -> binary.append("0111");
+                case '8' -> binary.append("1000");
+                case '9' -> binary.append("1001");
+                case 'A' -> binary.append("1010");
+                case 'B' -> binary.append("1011");
+                case 'C' -> binary.append("1100");
+                case 'D' -> binary.append("1101");
+                case 'E' -> binary.append("1110");
+                case 'F' -> binary.append("1111");
+            }
+        }
+        return String.valueOf(binary);
     }
 }
