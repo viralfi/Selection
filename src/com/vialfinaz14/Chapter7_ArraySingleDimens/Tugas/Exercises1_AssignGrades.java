@@ -30,13 +30,13 @@ public class Exercises1_AssignGrades {
         public static void getgrade(int[] schore, char[] grade) {
         int best = max(schore);
         for (int i = 0; i < schore.length; i++) {
-            if (schore[i] >= -10)
+            if (schore[i] >= best -10)
                 grade[i] = 'A';
-            else if (schore[i] >= -20)
+            else if (schore[i] >= best -20)
                 grade[i] = 'B';
-            else if (schore[i] >= -30)
+            else if (schore[i] >= best -30)
                 grade[i] = 'C';
-            else if (schore[i] >= -40)
+            else if (schore[i] >= best -40)
                 grade[i] = 'D';
             else
                 grade[i] = 'F';

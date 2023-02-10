@@ -11,7 +11,7 @@ public class Exercises3_CountOccurrenceOfNumbers {
        for (int i = 0; i < count.length; i++) {
            if (count[i] > 0)
                System.out.println((i + 1) + " occurs " + count[i] +
-                       " time " + (count[i] > 1 ? " s " : ""));
+                       " time" + (count[i] > 1 ? "s " : ""));
        }
     }
     public static void counts(int[] count) {
