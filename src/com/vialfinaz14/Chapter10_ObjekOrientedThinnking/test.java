@@ -13,7 +13,7 @@ public class test {
         System.out.println(Integer.parseInt("12", 10));
         System.out.println(Integer.parseInt("12", 16));
         System.out.println(Integer.parseInt("13"));
-        System.out.println(Integer.parseInt("13", 10));System.out.println(Integer.parseInt("13", 16));
+        System.out.println(Integer.parseInt("12", 10));System.out.println(Integer.parseInt("13", 16));
     }
 }
 
