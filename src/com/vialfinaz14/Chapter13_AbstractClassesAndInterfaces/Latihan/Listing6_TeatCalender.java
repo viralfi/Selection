@@ -31,5 +31,7 @@ public class Listing6_TeatCalender {
         Calendar calender1 = new GregorianCalendar(2001, 8, 11);
         String[] dayNmaofweek = {"Sunday", "Monday", "Tuesday", "Wednesday",
                 "Thursday", "Friday", "Saturday"};
+        System.out.println("September 11, 2001 is a " +
+                dayNmaofweek[calender1.get(Calendar.DAY_OF_WEEK) - 1]);
     }
 }
