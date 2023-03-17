@@ -8,6 +8,7 @@ public class CircleWithStaticMembers {
         numberofobject++;
     }
     CircleWithStaticMembers(double newRadius) {
+        radius = newRadius;
         numberofobject++;
     }
     static int getNumberofobject() {
